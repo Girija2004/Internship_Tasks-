@@ -1,9 +1,23 @@
 
+def makingAnagrams(s1, s2):
+    count1 = [0] * 26
+    count2 = [0] * 26
+
+    for char in s1:
+        count1[ord(char) - ord('a')] += 1
+
+    for char in s2:
+        count2[ord(char) - ord('a')] += 1
+
+    deletions = 0
+
+    for i in range(26):
+        deletions += abs(count1[i] - count2[i])
+
+    return deletions
+
+
 if __name__ == '__main__':
-    n = int(input())
-    english = set(map(int, input().split()))
-
-    m = int(input())
-    french = set(map(int, input().split()))
-
-    print(len(english.union(french)))
+    s1 = input()
+    s2 = input()
+    print(makingAnagrams(s1, s2))

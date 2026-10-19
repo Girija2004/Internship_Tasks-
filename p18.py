@@ -1,21 +1,11 @@
 
+def stringConstruction(s):
+    return len(set(s))
+
+
 if __name__ == '__main__':
-    n = int(input())
-    A = set(map(int, input().split()))
+    q = int(input())
 
-    N = int(input())
-
-    for _ in range(N):
-        operation, length = input().split()
-        other_set = set(map(int, input().split()))
-
-        if operation == 'update':
-            A.update(other_set)
-        elif operation == 'intersection_update':
-            A.intersection_update(other_set)
-        elif operation == 'difference_update':
-            A.difference_update(other_set)
-        elif operation == 'symmetric_difference_update':
-            A.symmetric_difference_update(other_set)
-
-    print(sum(A))
+    for _ in range(q):
+        s = input().strip()
+        print(stringConstruction(s))

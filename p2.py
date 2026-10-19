@@ -1,8 +1,7 @@
 
 if __name__ == '__main__':
-    a = int(input())
-    b = int(input())
+    k = int(input())
+    rooms = list(map(int, input().split()))
 
-    print(a + b)
-    print(a - b)
-    print(a * b)
+    unique_rooms = set(rooms)
+    print((sum(unique_rooms) * k - sum(rooms)) // (k - 1))

@@ -1,11 +1,14 @@
 
+def camelcase(s):
+    count = 1
+
+    for char in s:
+        if char.isupper():
+            count += 1
+
+    return count
+
+
 if __name__ == '__main__':
-    n, m = map(int, input().split())
-
-    for i in range(1, n, 2):
-        print(('.|.' * i).center(m, '-'))
-
-    print('WELCOME'.center(m, '-'))
-
-    for i in range(n - 2, 0, -2):
-        print(('.|.' * i).center(m, '-'))
+    s = input()
+    print(camelcase(s))

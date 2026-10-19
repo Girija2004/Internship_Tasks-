@@ -1,6 +1,14 @@
 
-if __name__ == '__main__':
-    n = int(input())
+def pangrams(s):
+    letters = set(s.lower())
 
-    for i in range(1, n + 1):
-        print(i, end='')
+    if len(set('abcdefghijklmnopqrstuvwxyz') & letters) == 26:
+        return "pangram"
+    else:
+        return "not pangram"
+
+
+if __name__ == '__main__':
+    s = input()
+    result = pangrams(s)
+    print(result)

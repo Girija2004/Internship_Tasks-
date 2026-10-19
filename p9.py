@@ -1,8 +1,9 @@
 
-def print_full_name(first, last):
-    print(f"Hello {first} {last}! You just delved into python.")
+def beautifulBinaryString(b):
+    return b.count('010')
+
 
 if __name__ == '__main__':
-    first = input()
-    last = input()
-    print_full_name(first, last)
+    n = int(input())
+    b = input()
+    print(beautifulBinaryString(b))

@@ -1,13 +1,15 @@
 
-def print_formatted(number):
-    width = len(bin(number)[2:])
+def twoStrings(s1, s2):
+    if set(s1) & set(s2):
+        return "YES"
+    else:
+        return "NO"
 
-    for i in range(1, number + 1):
-        print(str(i).rjust(width),
-              oct(i)[2:].rjust(width),
-              hex(i)[2:].upper().rjust(width),
-              bin(i)[2:].rjust(width))
 
 if __name__ == '__main__':
-    n = int(input())
-    print_formatted(n)
+    p = int(input())
+
+    for _ in range(p):
+        s1 = input()
+        s2 = input()
+        print(twoStrings(s1, s2))

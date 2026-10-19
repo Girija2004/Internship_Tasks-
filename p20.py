@@ -1,11 +1,17 @@
-import re
+
+def superReducedString(s):
+    stack = []
+
+    for ch in s:
+        if stack and stack[-1] == ch:
+            stack.pop()
+        else:
+            stack.append(ch)
+
+    return ''.join(stack) if stack else "Empty String"
+
 
 if __name__ == '__main__':
-    n = int(input())
-
-    for _ in range(n):
-        number = input()
-        if re.fullmatch(r'[789]\d{9}', number):
-            print("YES")
-        else:
-            print("NO")
+    s = input().strip()
+    result = superReducedString(s)
+    print(result)

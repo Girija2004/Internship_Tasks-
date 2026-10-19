@@ -1,7 +1,16 @@
 
-if __name__ == '__main__':
-    a = int(input())
-    b = int(input())
+def marsExploration(s):
+    expected = "SOS"
+    count = 0
 
-    print(a // b)
-    print(a / b)
+    for i in range(len(s)):
+        if s[i] != expected[i % 3]:
+            count += 1
+
+    return count
+
+
+if __name__ == '__main__':
+    s = input()
+    result = marsExploration(s)
+    print(result)

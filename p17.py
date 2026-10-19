@@ -1,15 +1,28 @@
 
+def separateNumbers(s):
+    if len(s) < 2 or s[0] == '0':
+        print("NO")
+        return
+
+    for i in range(1, len(s) // 2 + 1):
+        first = int(s[:i])
+        current = first
+        result = str(first)
+
+        while len(result) < len(s):
+            current += 1
+            result += str(current)
+
+        if result == s:
+            print("YES", first)
+            return
+
+    print("NO")
+
+
 if __name__ == '__main__':
-    A = set(map(int, input().split()))
-    n = int(input())
+    q = int(input())
 
-    result = True
-
-    for _ in range(n):
-        B = set(map(int, input().split()))
-
-        if not A.issuperset(B) or A == B:
-            result = False
-            break
-
-    print(result)
+    for _ in range(q):
+        s = input().strip()
+        separateNumbers(s)

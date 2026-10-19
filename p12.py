@@ -1,17 +1,23 @@
 
+def makingAnagrams(s1, s2):
+    count1 = [0] * 26
+    count2 = [0] * 26
+
+    for char in s1:
+        count1[ord(char) - ord('a')] += 1
+
+    for char in s2:
+        count2[ord(char) - ord('a')] += 1
+
+    deletions = 0
+
+    for i in range(26):
+        deletions += abs(count1[i] - count2[i])
+
+    return deletions
+
+
 if __name__ == '__main__':
-    n = int(input())
-    s = set(map(int, input().split()))
-    N = int(input())
-
-    for _ in range(N):
-        command = input().split()
-
-        if command[0] == 'pop':
-            s.pop()
-        elif command[0] == 'remove':
-            s.remove(int(command[1]))
-        elif command[0] == 'discard':
-            s.discard(int(command[1]))
-
-    print(sum(s))
+    s1 = input()
+    s2 = input()
+    print(makingAnagrams(s1, s2))

@@ -1,9 +1,20 @@
 
+from collections import Counter
+
+def gameOfThrones(s):
+    freq = Counter(s)
+    odd_count = 0
+
+    for count in freq.values():
+        if count % 2 != 0:
+            odd_count += 1
+
+    if odd_count <= 1:
+        return "YES"
+    else:
+        return "NO"
+
+
 if __name__ == '__main__':
-    n = int(input())
-    english = set(map(int, input().split()))
-
-    m = int(input())
-    french = set(map(int, input().split()))
-
-    print(len(english.difference(french)))
+    s = input().strip()
+    print(gameOfThrones(s))

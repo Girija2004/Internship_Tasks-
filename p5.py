@@ -1,13 +1,16 @@
+def alternatingCharacters(s):
+    deletions = 0
 
-def is_leap(year):
-    if year % 400 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 4 == 0:
-        return True
-    else:
-        return False
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            deletions += 1
 
-year = int(input())
-print(is_leap(year))
+    return deletions
+
+
+if __name__ == '__main__':
+    q = int(input())
+
+    for _ in range(q):
+        s = input()
+        print(alternatingCharacters(s))
